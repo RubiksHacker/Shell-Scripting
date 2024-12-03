@@ -10,7 +10,7 @@ cache_removal() {
     sudo catchpoint restart
 }
 
-# Function to check if LVM is used
+# Function to check if LVM is used in the server
 check_lvm() {
     if ! command -v lvs &> /dev/null; then
         echo "LVM tools are not installed."
