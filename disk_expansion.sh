@@ -1,13 +1,13 @@
 #!/bin/bash
 
 cache_removal() {
-    catchpoint stop
+    sudo catchpoint stop
     rm -rf /var/CatchPoint/Agent/Services/CommEng/Cache/*.dta
     rm -rf /var/3genlabs/hawk/syntheticnode/service/cache/*
     if command -v "unbound-control"; then
         unbound-control reload
     fi
-    catchpoint restart
+    sudo catchpoint restart
 }
 
 # Function to check if LVM is used
